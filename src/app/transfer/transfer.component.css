@@ -1,2 +1,52 @@
 .transfer-container {
+  width: 250px;
+  height: 320px;
+  background-color: white;
+}
+
+.header {
+  background-color: rgb(12, 131, 151);
+  height: 35px;
+}
+
+p {
+  font-family: "Kanit", sans-serif;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+}
+
+label {
+  font-family: "Kanit", sans-serif;
+  font-size: small;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  font-family: "Kanit", sans-serif;
+  float: right;
+  color: #fff;
+  border: 1px solid transparent;
+  background-color: #e25a2c;
+  border-color: #e25a2c;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0.4rem 4rem;
+  margin-right: 20px;
+  margin-top: 20px;
 }

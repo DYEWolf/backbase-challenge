@@ -1,1 +1,26 @@
-<div class="transfer-container"></div>
+<div class="transfer-container">
+  <div class="header">
+    <p>Make a Transfer</p>
+  </div>
+  <form [formGroup]="transferForm" (ngSubmit)="submitTransfer()">
+    <div class="form-container">
+      <label for="from-account">FROM ACCOUNT</label>
+      <input
+        type="text"
+        id="from-account"
+        name="from-account"
+        formControlName="fromAccount"
+      />
+      <label for="to-account">TO ACCOUNT</label>
+      <input
+        type="text"
+        id="to-account"
+        name="to-account"
+        formControlName="toAccount"
+      />
+      <label for="amount">AMOUNT</label>
+      <input type="number" id="amount" name="amount" formControlName="amount" />
+    </div>
+    <button type="submit" class="submit-button">SUBMIT</button>
+  </form>
+</div>

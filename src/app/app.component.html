@@ -1,12 +1,9 @@
 <div class="container">
   <app-header></app-header>
+  <div class="components-container">
+    <app-transfer></app-transfer>
+    <app-transactions-table
+      [transactionsData]="transactions$"
+    ></app-transactions-table>
+  </div>
 </div>
-<!-- <app-transactions-table
-  [transactionsData]="transactions$"
-></app-transactions-table>
-
-<input type="text" name="" id="" [(ngModel)]="logo" />
-<input type="text" name="" id="" [(ngModel)]="date" />
-<input type="text" name="" id="" [(ngModel)]="color" />
-
-<button (click)="addNewTransaction()">test</button> -->
