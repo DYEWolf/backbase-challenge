@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Date</th>
+      <th>Logo</th>
+      <!-- <th>Company</th>
+        <th>Amount</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of transactionsData | async">
+      <td>
+        <div
+          class="colorTable"
+          [ngStyle]="{ 'background-color': item.categoryCode }"
+        ></div>
+      </td>
+      <td>{{ item.dates.valueDate | date }}</td>
+      <td>
+        <img
+          src="../assets/icons/{{ item.merchant.imageLogo }}.png"
+          [alt]="item.merchant.name"
+          class="image-logo"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
