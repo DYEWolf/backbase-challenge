@@ -11,3 +11,16 @@
   align-items: center;
   justify-content: space-around;
 }
+
+@media (max-width: 750px) {
+  .components-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .container {
+    height: auto;
+  }
+}

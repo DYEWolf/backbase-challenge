@@ -12,11 +12,14 @@
   background-color: white;
   height: 400px;
   overflow: auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 table {
   font-family: "Kanit", sans-serif;
   color: #333333;
+  border: 1.5px solid lightgray;
 }
 
 td {
@@ -33,4 +36,42 @@ p {
 
 .bold-font {
   font-weight: bold;
+}
+
+.table-component {
+  height: 510px;
+  width: 500px;
+  background-color: white;
+  margin-top: 50px;
+}
+
+.header {
+  background-color: rgb(12, 131, 151);
+  height: 35px;
+  font-family: "Kanit", sans-serif;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 15px;
+}
+
+.search-bar {
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  margin-bottom: 20px;
+  color: #7b7772;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+@media (max-width: 750px) {
+  .table-component {
+    width: 350px;
+    margin-top: 30px;
+  }
 }

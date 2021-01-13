@@ -1,29 +1,43 @@
-<div class="table-container">
-  <table>
-    <tbody>
-      <tr *ngFor="let item of transactionsData | async">
-        <td>
-          <div
-            class="colorTable"
-            [ngStyle]="{ 'background-color': item.categoryCode }"
-          ></div>
-        </td>
-        <td>{{ item.dates.valueDate | date }}</td>
-        <td>
-          <img
-            src="../assets/icons/{{ item.merchant.imageLogo }}.png"
-            [alt]="item.merchant.name"
-            class="image-logo"
-          />
-        </td>
-        <td class="td-brand">
-          <p class="bold-font">{{ item.merchant.name }}</p>
-          <p>{{ item.transaction.type }}</p>
-        </td>
-        <td class="bold-font">
-          -{{ item.transaction.amountCurrency.amount | currency: "EUR" }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="table-component">
+  <div class="header">
+    <p>Recent Transactions</p>
+  </div>
+  <div class="search-bar">
+    <input
+      type="text"
+      id="to-account"
+      name="to-account"
+      formControlName="toAccount"
+      placeholder="Search by typing"
+    />
+  </div>
+  <div class="table-container">
+    <table>
+      <tbody>
+        <tr *ngFor="let item of transactionsData | async">
+          <td>
+            <div
+              class="colorTable"
+              [ngStyle]="{ 'background-color': item.categoryCode }"
+            ></div>
+          </td>
+          <td>{{ item.dates.valueDate | date }}</td>
+          <td>
+            <img
+              src="../assets/icons/{{ item.merchant.imageLogo }}.png"
+              [alt]="item.merchant.name"
+              class="image-logo"
+            />
+          </td>
+          <td class="td-brand">
+            <p class="bold-font">{{ item.merchant.name }}</p>
+            <p>{{ item.transaction.type }}</p>
+          </td>
+          <td class="bold-font">
+            {{ item.transaction.amountCurrency.amount | currency: "EUR" }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
