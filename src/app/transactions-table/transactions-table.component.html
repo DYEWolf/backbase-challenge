@@ -5,9 +5,10 @@
   <div class="search-bar">
     <input
       type="text"
-      id="search-input"
-      name="search-input"
+      id="searchTerm"
+      name="searchTerm"
       placeholder="Search by typing"
+      [(ngModel)]="transactionsService.searchTerm"
     />
     <p class="sort-paragraph">Sort by</p>
     <div class="btn-group">

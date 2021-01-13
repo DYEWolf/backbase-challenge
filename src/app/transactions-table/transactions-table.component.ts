@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TransactionsService } from '../transactions.service';
 
 @Component({
   selector: 'app-transactions-table',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TransactionsTableComponent implements OnInit {
   @Input() transactionsData;
 
-  constructor() {}
+  constructor(public transactionsService: TransactionsService) {}
 
   ngOnInit(): void {}
 }

@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransferComponent } from './transfer/transfer.component';
 import { TransactionsTableComponent } from './transactions-table/transactions-table.component';
 import { HeaderComponent } from './header/header.component';
+import { CommonModule, DecimalPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,14 @@ import { HeaderComponent } from './header/header.component';
     TransactionsTableComponent,
     HeaderComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+  ],
+  providers: [DecimalPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
