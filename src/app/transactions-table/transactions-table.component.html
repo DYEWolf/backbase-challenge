@@ -12,7 +12,9 @@
     />
     <p class="sort-paragraph">Sort by</p>
     <div class="btn-group">
-      <button sortable="dates.valueDate" (sort)="onSort($event)">DATE</button>
+      <button sortable="dates.formatedDate" (sort)="onSort($event)">
+        DATE
+      </button>
       <button sortable="merchant.name" (sort)="onSort($event)">
         BENEFICIARY
       </button>
@@ -56,7 +58,7 @@
             <p>{{ item.transaction.type }}</p>
           </td>
           <td class="bold-font">
-            {{ item.transaction.amountCurrency.amount | currency: "EUR" }}
+            -{{ item.transaction.amountCurrency.amount | currency: "EUR" }}
           </td>
         </tr>
       </tbody>

@@ -108,6 +108,7 @@ export class TransactionsService {
     transacactionsObj.map((res) => {
       const imagePath = res.merchant.name.replace(/\s+/g, '-').toLowerCase();
       res.merchant.imageLogo = imagePath;
+      res.dates.formatedDate = new Date(res.dates.valueDate);
     });
 
     // 1. sort

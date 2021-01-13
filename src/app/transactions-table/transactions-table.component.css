@@ -37,6 +37,7 @@ p {
 
 .bold-font {
   font-weight: bold;
+  width: 100px;
 }
 
 .table-component {
@@ -136,9 +137,11 @@ input {
   height: 12px;
   float: left;
   margin-top: 2px;
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
 }
 
 [sortable].desc:before {
-  transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
 }
