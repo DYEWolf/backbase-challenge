@@ -1,6 +1,6 @@
 .transfer-container {
   width: 250px;
-  height: 320px;
+  height: 310px;
   background-color: white;
 }
 
@@ -14,11 +14,13 @@ p {
   color: white;
   text-align: center;
   padding-top: 5px;
+  font-size: 15px;
 }
 
 label {
   font-family: "Kanit", sans-serif;
-  font-size: small;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .form-container {
@@ -35,6 +37,7 @@ input {
   border-bottom: 1px solid lightgray;
   outline: none;
   margin-bottom: 20px;
+  color: #7b7772;
 }
 
 .submit-button {
@@ -46,7 +49,7 @@ input {
   border-color: #e25a2c;
   cursor: pointer;
   border-radius: 0.25rem;
-  padding: 0.4rem 4rem;
+  padding: 0.4rem 3rem;
   margin-right: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
 }

@@ -4,9 +4,33 @@
 }
 
 .image-logo {
-  height: 50px;
+  height: 35px;
+  filter: grayscale(100%);
+}
+
+.table-container {
+  background-color: white;
+  height: 400px;
+  overflow: auto;
 }
 
 table {
-  background-color: white;
+  font-family: "Kanit", sans-serif;
+  color: #333333;
+}
+
+td {
+  font-size: small;
+}
+
+p {
+  margin: 0;
+}
+
+.td-brand {
+  width: 300px;
+}
+
+.bold-font {
+  font-weight: bold;
 }

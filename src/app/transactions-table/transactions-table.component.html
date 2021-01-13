@@ -1,29 +1,29 @@
-<table>
-  <thead>
-    <tr>
-      <th>Color</th>
-      <th>Date</th>
-      <th>Logo</th>
-      <!-- <th>Company</th>
-        <th>Amount</th> -->
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of transactionsData | async">
-      <td>
-        <div
-          class="colorTable"
-          [ngStyle]="{ 'background-color': item.categoryCode }"
-        ></div>
-      </td>
-      <td>{{ item.dates.valueDate | date }}</td>
-      <td>
-        <img
-          src="../assets/icons/{{ item.merchant.imageLogo }}.png"
-          [alt]="item.merchant.name"
-          class="image-logo"
-        />
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-container">
+  <table>
+    <tbody>
+      <tr *ngFor="let item of transactionsData | async">
+        <td>
+          <div
+            class="colorTable"
+            [ngStyle]="{ 'background-color': item.categoryCode }"
+          ></div>
+        </td>
+        <td>{{ item.dates.valueDate | date }}</td>
+        <td>
+          <img
+            src="../assets/icons/{{ item.merchant.imageLogo }}.png"
+            [alt]="item.merchant.name"
+            class="image-logo"
+          />
+        </td>
+        <td class="td-brand">
+          <p class="bold-font">{{ item.merchant.name }}</p>
+          <p>{{ item.transaction.type }}</p>
+        </td>
+        <td class="bold-font">
+          -{{ item.transaction.amountCurrency.amount | currency: "EUR" }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
