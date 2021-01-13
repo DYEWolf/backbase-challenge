@@ -20,6 +20,7 @@ table {
   font-family: "Kanit", sans-serif;
   color: #333333;
   border: 1.5px solid lightgray;
+  width: 100%;
 }
 
 td {
@@ -40,7 +41,7 @@ p {
 
 .table-component {
   height: 510px;
-  width: 500px;
+  width: 600px;
   background-color: white;
   margin-top: 50px;
 }
@@ -56,6 +57,7 @@ p {
 }
 
 .search-bar {
+  display: flex;
 }
 
 input {
@@ -67,6 +69,7 @@ input {
   color: #7b7772;
   margin-top: 20px;
   margin-left: 15px;
+  width: 230px;
 }
 
 @media (max-width: 750px) {
@@ -74,4 +77,50 @@ input {
     width: 350px;
     margin-top: 30px;
   }
+  .search-bar {
+    flex-direction: column;
+  }
+
+  input {
+    width: 300px;
+  }
+
+  .btn-group {
+    margin-bottom: 20px;
+  }
+
+  .sort-paragraph {
+    margin-left: 16px !important;
+  }
+}
+
+.sort-paragraph {
+  font-family: "Kanit", sans-serif;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 26px;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.btn-group button {
+  font-family: "Kanit", sans-serif;
+  color: #6c757d;
+  border-color: #6c757d;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding: 0.01rem 0.75rem;
+}
+
+.btn-group {
+  margin-top: 15px;
+  margin-left: 15px;
 }
