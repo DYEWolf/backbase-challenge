@@ -20,10 +20,16 @@ function sort(transactions, column: SortColumn, direction: string) {
     return transactions;
   } else {
     return [...transactions].sort((a, b) => {
-      const res = compare(a[column], b[column]);
+      const res = compare(resolve(column, a), resolve(column, b));
       return direction === 'asc' ? res : -res;
     });
   }
+}
+
+function resolve(path, obj) {
+  return path.split('.').reduce(function (prev, curr) {
+    return prev ? prev[curr] : null;
+  }, obj || self);
 }
 
 function matches(transaction, term: string, pipe: PipeTransform) {
@@ -57,8 +63,6 @@ export class TransactionsService {
       )
       .subscribe((result) => {
         this._transactions$.next(result);
-        console.log('subs', this._transactions$);
-        console.log(result);
       });
 
     this._search$.next();
@@ -95,7 +99,6 @@ export class TransactionsService {
   addTransaction(transaction) {
     this.TRANSACTIONS.push(transaction);
     this._search$.next();
-    console.log(this.TRANSACTIONS);
   }
 
   private _search(): Observable<any> {
@@ -114,12 +117,6 @@ export class TransactionsService {
     transactions = transactions.filter((transaction) =>
       matches(transaction, searchTerm, this.pipe)
     );
-
-    console.log(transacactionsObj);
-    console.log(transactions);
-
-    // let transactions = transacactionsObj;
-    console.log(transactions);
     return of(transactions);
   }
 }

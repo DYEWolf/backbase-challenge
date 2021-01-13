@@ -12,13 +12,29 @@
     />
     <p class="sort-paragraph">Sort by</p>
     <div class="btn-group">
-      <button>DATE</button>
-      <button>BENEFICIARY</button>
-      <button>AMOUNT</button>
+      <button sortable="dates.valueDate" (sort)="onSort($event)">DATE</button>
+      <button sortable="merchant.name" (sort)="onSort($event)">
+        BENEFICIARY
+      </button>
+      <button
+        sortable="transaction.amountCurrency.amount"
+        (sort)="onSort($event)"
+      >
+        AMOUNT
+      </button>
     </div>
   </div>
   <div class="table-container">
     <table>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
       <tbody>
         <tr *ngFor="let item of transactionsData | async">
           <td>

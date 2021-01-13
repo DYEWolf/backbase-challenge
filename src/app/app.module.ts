@@ -8,6 +8,7 @@ import { TransferComponent } from './transfer/transfer.component';
 import { TransactionsTableComponent } from './transactions-table/transactions-table.component';
 import { HeaderComponent } from './header/header.component';
 import { CommonModule, DecimalPipe } from '@angular/common';
+import { NgbdSortableHeader } from './sortable.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CommonModule, DecimalPipe } from '@angular/common';
     TransferComponent,
     TransactionsTableComponent,
     HeaderComponent,
+    NgbdSortableHeader,
   ],
   imports: [
     BrowserModule,
