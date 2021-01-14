@@ -1,9 +1,16 @@
 <div class="container">
   <app-header></app-header>
   <div class="components-container">
-    <app-transfer></app-transfer>
+    <app-transfer
+      (tranferData)="onTransferData($event)"
+      [balance]="balance"
+    ></app-transfer>
     <app-transactions-table
       [transactionsData]="transactions$"
     ></app-transactions-table>
   </div>
+  <app-preview-screen
+    [data]="transferData"
+    (confirmTransaction)="onConfirmTransaction($event)"
+  ></app-preview-screen>
 </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ModalService } from './modal.service';
 import { TransactionsService } from './transactions.service';
 
 @Component({
@@ -9,25 +10,34 @@ import { TransactionsService } from './transactions.service';
 })
 export class AppComponent {
   transactions$: Observable<any>;
+  transferData;
 
-  logo = 'backbase';
-  date = 1600387200000;
-  color = '#12a580';
+  balance = 5824.76;
 
-  constructor(public transactionsService: TransactionsService) {
+  constructor(
+    public transactionsService: TransactionsService,
+    private modalService: ModalService
+  ) {
     this.transactions$ = transactionsService.transactions$;
   }
 
-  addNewTransaction() {
-    let color = this.color;
-    let date = this.date;
-    let name = this.logo;
-    const obj = {
-      categoryCode: color,
-      dates: { valueDate: date },
-      merchant: { name: name },
-    };
-    console.log(obj);
-    this.transactionsService.addTransaction(obj);
+  open() {
+    this.modalService.open();
+  }
+
+  onTransferData(transferData) {
+    if (transferData) {
+      this.transferData = transferData;
+      this.modalService.open();
+    } else {
+      this.transferData = null;
+      this.modalService.open();
+    }
+  }
+
+  onConfirmTransaction(confirm) {
+    this.balance =
+      this.balance - this.transferData.transaction.amountCurrency.amount;
+    this.transactionsService.addTransaction(this.transferData);
   }
 }

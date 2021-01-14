@@ -97,7 +97,7 @@ export class TransactionsService {
   }
 
   addTransaction(transaction) {
-    this.TRANSACTIONS.push(transaction);
+    this.TRANSACTIONS.unshift(transaction);
     this._search$.next();
   }
 

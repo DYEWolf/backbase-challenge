@@ -1,0 +1,40 @@
+<ng-container *ngIf="display$ | async as display">
+  <section [class.open]="display === 'open'">
+    <div (click)="$event.stopPropagation()" *ngIf="data; else test">
+      <button class="close" type="button" (click)="close()">X</button>
+      <h1>Confirm Transfer</h1>
+      <div class="confirm-text">
+        <p class="property-text">From Account:</p>
+        <p class="value-class">Free Checking(4692)</p>
+      </div>
+      <div class="confirm-text">
+        <p class="property-text">To Account:</p>
+        <p class="value-class">
+          {{ data ? data.merchant.name : "" }}
+        </p>
+      </div>
+      <div class="confirm-text">
+        <p class="property-text">Amount:</p>
+        <p class="value-class">
+          {{ data ? data.transaction.amountCurrency.amount : "" }}
+        </p>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn btn-cancel" (click)="close()">Cancel</button>
+        <button class="btn btn-accept" (click)="accept()">Accept</button>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #test>
+  <div (click)="$event.stopPropagation()">
+    <button class="close" type="button" (click)="close()">X</button>
+    <h1>Transaction Error</h1>
+    <p>You don't have enough funds for the transer.</p>
+    <div class="action-buttons">
+      <button class="btn btn-accept" (click)="close()">Accept</button>
+    </div>
+  </div>
+</ng-template>

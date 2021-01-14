@@ -1,0 +1,85 @@
+section {
+  visibility: hidden;
+  opacity: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms ease-in;
+}
+section.open {
+  visibility: inherit;
+  opacity: 1;
+}
+section > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  background: white;
+  padding: 64px 64px 30px 64px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+}
+section button.close {
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 16px;
+}
+
+h1 {
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  margin-top: -15px;
+}
+
+p {
+  font-family: "Kanit", sans-serif;
+}
+
+.action-buttons {
+  display: flex;
+}
+
+.value-class {
+  margin-left: 20px;
+  overflow-wrap: anywhere;
+}
+
+.confirm-text {
+  display: flex;
+}
+
+.property-text {
+  font-weight: bold;
+}
+
+.btn {
+  font-family: "Kanit", sans-serif;
+  float: right;
+  color: #fff;
+  border: 1px solid transparent;
+  background-color: #e25a2c;
+  border-color: #e25a2c;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0.4rem 2rem;
+  margin-right: 20px;
+}
+
+.btn-cancel {
+  border: 1px solid transparent;
+  background-color: #ed5e68;
+  border-color: #ed5e68;
+}

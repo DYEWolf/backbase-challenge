@@ -45,6 +45,7 @@ p {
   width: 600px;
   background-color: white;
   margin-top: 50px;
+  box-shadow: 0 0 10px black;
 }
 
 .header {

@@ -21,6 +21,12 @@
       <label for="amount">AMOUNT</label>
       <input type="number" id="amount" name="amount" formControlName="amount" />
     </div>
-    <button type="submit" class="submit-button">SUBMIT</button>
+    <button
+      type="submit"
+      class="submit-button"
+      [disabled]="transferForm.invalid"
+    >
+      SUBMIT
+    </button>
   </form>
 </div>

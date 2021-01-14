@@ -2,6 +2,7 @@
   width: 250px;
   height: 310px;
   background-color: white;
+  box-shadow: 0 0 10px black;
 }
 
 .header {
@@ -52,4 +53,11 @@ input {
   padding: 0.4rem 3rem;
   margin-right: 20px;
   margin-top: 15px;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
